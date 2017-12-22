@@ -37,7 +37,7 @@ class EditMeetup extends React.Component {
     getMeetupDetails(){
         let meetupId = this.props.match.params.id
         
-        Axios.get(`http://localhost:3000/api/meetups/${meetupId}`)
+        Axios.get(`https://radiant-oasis-68917.herokuapp.com/api/meetups/${meetupId}`)
             .then(response => {
                     this.setState({
                         id: response.data.id,
@@ -57,7 +57,7 @@ class EditMeetup extends React.Component {
         // put is update existing stuff
         Axios.request({
             method: 'put',
-            url: `http://localhost:3000/api/meetups/${this.state.id}`,
+            url: `https://radiant-oasis-68917.herokuapp.com/api/meetups/${this.state.id}`,
             data: newMeetup
         }).then(response => {
             // props.history is from the react router
